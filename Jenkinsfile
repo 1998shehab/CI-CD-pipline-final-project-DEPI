@@ -13,7 +13,6 @@ pipeline{
                 sh 'cd example-voting-app'
             }
         }
-        }
         stage('docker-compos'){
             steps{
                 sh 'docker-compose up'
