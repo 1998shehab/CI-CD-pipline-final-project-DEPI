@@ -10,10 +10,10 @@ pipeline{
         }    
         stage('directory'){
             steps{
-                sh 'cd example-voting-app'
+                sh 'cd /home/yat/Desktop/final-project/example-voting-app'
             }
         }
-        stage('docker-compos'){
+        stage('docker-compose'){
             steps{
                 sh 'docker-compose up'
             }
