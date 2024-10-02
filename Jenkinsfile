@@ -7,6 +7,7 @@ pipeline{
                 git ('git@github.com:dockersamples/example-voting-app.git')
             
             }
+        }    
         stage('directory'){
             steps{
                 sh 'cd example-voting-app'
