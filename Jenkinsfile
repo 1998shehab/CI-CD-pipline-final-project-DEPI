@@ -12,7 +12,7 @@ pipeline{
             steps{
                 sh 'cd /home/yat/Desktop/final-project/example-voting-app'
                 sh 'docker-compose --version'
-                sh 'docker-compose up '
+                sh 'docker-compose -f docker-compose.yml up'
             }
         }
     }
