@@ -11,13 +11,13 @@ pipeline{
         stage('docker-images'){
             steps{
                 sh '''cd /home/yat/Desktop/final-project/example-voting-app/vote
-                      docker build -t vote_image     
+                      docker build -t vote_image .   
                    '''  
                 sh '''cd /home/yat/Desktop/final-project/example-voting-app/worker
-                      docker build -t worker_image
+                      docker build -t worker_image .
                    ''' 
                 sh '''cd /home/yat/Desktop/final-project/example-voting-app/result
-                      docker build -t result_image
+                      docker build -t result_image .
                    ''' 
             }
         }
