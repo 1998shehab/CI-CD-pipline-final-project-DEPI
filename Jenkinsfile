@@ -30,7 +30,8 @@ pipeline{
             steps{
                 sh '''cd cd /home/yat/Desktop/final-project/example-voting-app
                       docker-compose up
-            }      '''
+                   '''   
+            }      
         }
         stage('test app'){
             steps{
