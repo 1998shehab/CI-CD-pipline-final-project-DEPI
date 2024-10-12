@@ -28,7 +28,7 @@ pipeline{
         }
         stage('run docker compose'){
             steps{
-                sh '''cd cd /home/yat/Desktop/final-project/example-voting-app
+                sh '''cd  /home/yat/Desktop/final-project/example-voting-app
                       docker-compose up
                    '''   
             }      
