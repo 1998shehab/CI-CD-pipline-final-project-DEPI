@@ -43,7 +43,7 @@ pipeline{
 
         post{
             success{
-                mail to "$mail_user", subject:'successed pipline : ${currentBuild.fullDisplayName}', body :' well done group 2'
+                mail to "$mail_user", subject:'successed pipline : ${currentBuild.fullDisplayName}', body:' well done group 2'
                 
             }
         }
