@@ -40,5 +40,20 @@ pipeline{
                    '''
             }
         }
+
+        post{
+            success{
+                mail to ${mail-user},
+                subject :'successed pipline : ${currentBuild.fullDisplayName}',
+                body : ' well done group 2'
+            }
+        }
+        post{
+            failure{
+                mail to ${mail-user},
+                subject : 'failed pipline: ${currentBuild.fullDisplayName}',
+                body: 'check the error and try again'
+            }
+        }
     }
 }
