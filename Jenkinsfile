@@ -43,14 +43,14 @@ pipeline{
 
         post{
             success{
-                mail to "$mail_user",
+                mail to "$mail_user"
                 subject :'successed pipline : ${currentBuild.fullDisplayName}',
                 body : ' well done group 2'
             }
         }
         post{
             failure{
-                mail to "$mail_user",
+                mail to "$mail_user"
                 subject : 'failed pipline: ${currentBuild.fullDisplayName}',
                 body: 'check the error and try again'
             }
