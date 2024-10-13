@@ -56,4 +56,7 @@ pipeline{
                     subject: "failed pipeline: ${currentBuild.fullDisplayName}",
                     body: "try again"
         )
+            }
+        }
+            }        
 }
