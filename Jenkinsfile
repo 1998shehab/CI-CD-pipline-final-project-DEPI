@@ -48,10 +48,8 @@ pipeline{
                 subject: "Succeeded pipeline: ${currentBuild.fullDisplayName}",
                 body: "Well done, Group 2!"
             )
-        }
-    }        
-    
-    post {
+        }        
+        
         failure {
             emailext (
                 to: "${mail_user}",
