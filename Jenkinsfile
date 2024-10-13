@@ -47,23 +47,19 @@ pipeline{
     }
     post {
         success {
-            emailext (
-                to: "${mail_user}",
-                subject: "Succeeded pipeline: ${currentBuild.fullDisplayName}",
-                body: "Well done, Group 2!",
-                from: "${env.MAIL_USER}",
-                replyTo: "${env.MAIL_USER}"
-            )
+            mail to: "${mail_user}",
+                 subject: "Succeeded pipeline: ${currentBuild.fullDisplayName}",
+                 body: "Well done, Group 2!",
+                 from: "${env.MAIL_USER}",
+                 replyTo: "${env.MAIL_USER}"
         }        
 
         failure {
-            emailext (
-                to: "${mail_user}",
-                subject: "failed pipeline: ${currentBuild.fullDisplayName}",
-                body: "try again",
-                from: "${env.MAIL_USER}",
-                replyTo: "${env.MAIL_USER}"
-            )
+            mail to: "${mail_user}",
+                 subject: "failed pipeline: ${currentBuild.fullDisplayName}",
+                 body: "try again",
+                 from: "${env.MAIL_USER}",
+                 replyTo: "${env.MAIL_USER}"
         }
     }        
 }
