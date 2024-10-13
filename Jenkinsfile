@@ -41,24 +41,23 @@ pipeline{
             }
         }
 
-        post {
-            success {
-                emailext (
-                    to: "${mail_user}",
-                    subject: "Succeeded pipeline: ${currentBuild.fullDisplayName}",
-                    body: "Well done, Group 2!"
-                )
-            }
-        }        
+    post {
+        success {
+            emailext (
+                to: "${mail_user}",
+                subject: "Succeeded pipeline: ${currentBuild.fullDisplayName}",
+                body: "Well done, Group 2!"
+            )
+        }
+    }        
     
-        post {
-            failure {
-                emailext (
-                    to: "${mail_user}",
-                    subject: "failed pipeline: ${currentBuild.fullDisplayName}",
-                    body: "try again"
-                )
-            }
+    post {
+        failure {
+            emailext (
+                to: "${mail_user}",
+                subject: "failed pipeline: ${currentBuild.fullDisplayName}",
+                body: "try again"
+            )
         }
     }        
 }
