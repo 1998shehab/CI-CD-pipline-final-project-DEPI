@@ -47,7 +47,9 @@ pipeline{
                     to: "${mail_user}",
                     subject: "Succeeded pipeline: ${currentBuild.fullDisplayName}",
                     body: "Well done, Group 2!"
-        )
+                )
+            }
+        }        
     
         post {
             failure {
@@ -55,8 +57,8 @@ pipeline{
                     to: "${mail_user}",
                     subject: "failed pipeline: ${currentBuild.fullDisplayName}",
                     body: "try again"
-        )
+                )
             }
         }
-            }        
+    }        
 }
