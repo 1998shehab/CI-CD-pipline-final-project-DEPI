@@ -1,5 +1,8 @@
 pipeline{
     agent  any
+    environment{
+        DOCKERHUB= credentials('docker-credentials')
+    }
 
     stages{
         stage('clone repo'){
@@ -38,6 +41,11 @@ pipeline{
                 sh '''curl localhost:5000
                       curl localhost:5001
                    '''
+            }
+        }
+        stage('docker login'){
+            steps{
+                sh "echo $DOCKERHUB_PSW | docker login -u $DOCKER_USR --password-stdin "
             }
         }
     }
