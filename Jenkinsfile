@@ -49,6 +49,13 @@ pipeline{
                 }
             }
         }
+        stage('push images'){
+            steps{
+                sh ''' docker tag result_image 1998shehab/depi_final:result
+                       docker push 1998shehab/depi_final:result
+                   '''           
+            }
+        }
     }
     post {
         success {
