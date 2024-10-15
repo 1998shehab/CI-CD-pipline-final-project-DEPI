@@ -51,8 +51,12 @@ pipeline{
         }
         stage('push images'){
             steps{
-                sh ''' docker tag result_ima 1998shehab/result:01
+                sh ''' docker tag result_image 1998shehab/result:01
                        docker push 1998shehab/result:01
+                       docker tag worker_image 1998shehab/worker:01
+                       docker push 1998shehab/worker:01
+                       docker tag vote_image 1998shehab/vote:01
+                       docker push 1998shehab/vote:01
                    '''           
             }
         }
