@@ -4,8 +4,7 @@ pipeline{
     stages{
         stage('clone repo'){
             steps{
-                git ('git@github.com:dockersamples/example-voting-app.git')
-            
+                git ('https://github.com/omarabdelwahabmb/depi-recommendation.git')
             }
         }    
         stage('docker-images'){
@@ -60,6 +59,7 @@ pipeline{
                    '''           
             }
         }
+        
     }
     post {
         success {
